@@ -46,6 +46,15 @@ export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 indent "libaio package installed.."
 apt-get install -y libaio1
 
+
+mkdir -p /opt/oracle
+cd /opt/oracle
+unzip -qq $CACHE_DIR/$BASIC_FILENAME
+sh -c "echo /opt/oracle/instantclient_19_19 > /etc/ld.so.conf.d/oracle-instantclient.conf"
+ldconfig
+export LD_LIBRARY_PATH=/opt/oracle/instantclient_19_19:$LD_LIBRARY_PATH
+
+
 # indent "Installing oracledb from npm..."
 # THIS_DIR=`pwd`
 # cd $BUILD_DIR
@@ -53,11 +62,11 @@ apt-get install -y libaio1
 # cd $THIS_DIR
 
 indent "Saving environment setup script..."
-mkdir -p $PROFILE_D_DIR
-cat << EOF > $PROFILE_D_DIR/oracle.sh
-#!/usr/bin/env bash
-export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/.apt/lib/x86_64-linux-gnu:\$HOME/vendor/oracle/instantclient_19_19"
-EOF
+# mkdir -p $PROFILE_D_DIR
+# cat << EOF > $PROFILE_D_DIR/oracle.sh
+# #!/usr/bin/env bash
+# export LD_LIBRARY_PATH="\$LD_LIBRARY_PATH:\$HOME/.apt/lib/x86_64-linux-gnu:\$HOME/vendor/oracle/instantclient_19_19"
+# EOF
 
 echo $OCI_INC_DIR
 echo $LD_LIBRARY_PATH
