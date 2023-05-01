@@ -17,8 +17,8 @@ PROFILE_D_DIR=$BUILD_DIR/.profile.d
 BASIC_FILENAME=instantclient-basic-linux.x64-12.2.0.1.0.zip
 SDK_FILENAME=instantclient-sdk-linux.x64-12.2.0.1.0.zip
 
-MIRROR_BASIC=https://www.dropbox.com/s/sn4tdjnsckkczuu/instantclient-basic-linux.x64-12.2.0.1.0.zip?dl=0
-MIRROR_SDK=https://www.dropbox.com/s/98bab146vtm20uv/instantclient-sdk-linux.x64-12.2.0.1.0.zip?dl=0
+MIRROR_BASIC=https://www.dropbox.com/s/i15ljrg0bwona9i/instantclient-basic-linux.x64-12.2.0.1.0.zip?dl=0
+MIRROR_SDK=https://www.dropbox.com/s/m4s5mn4lysqzf1t/instantclient-sdk-linux.x64-12.2.0.1.0.zip?dl=0
 
 if [ ! -f $CACHE_DIR/$BASIC_FILENAME ]; then
     indent "Downloading $BASIC_FILENAME..."
