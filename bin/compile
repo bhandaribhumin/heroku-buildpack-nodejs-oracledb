@@ -45,6 +45,9 @@ export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 indent "Check npm version"
 which npm
 
+indent "Install node"
+apt install npm
+
 indent "make sure to use 64-bit or 32-bit Oracle client libraries to match the Node.js architecture...."
 node -p "process.arch"
 
