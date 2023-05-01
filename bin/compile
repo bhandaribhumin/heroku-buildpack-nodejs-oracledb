@@ -42,6 +42,9 @@ ln -s libclntsh.so.12.1 $INSTANTCLIENT_DIR/libclntsh.so
 export OCI_LIB_DIR=$INSTANTCLIENT_DIR
 export OCI_INC_DIR=$INSTANTCLIENT_DIR/sdk/include
 
+indent "Check npm version"
+which npm
+
 indent "make sure to use 64-bit or 32-bit Oracle client libraries to match the Node.js architecture...."
 node -p "process.arch"
 
